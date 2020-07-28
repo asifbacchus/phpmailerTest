@@ -14,7 +14,7 @@ function missingConfig($missingParam){
 }
 
 // global variables
-$output = $usePort = $useEncryption = $recipient = $replyTo = NULL;
+$output = $usePort = $useArbPort = $useEncryption = $recipient = $replyTo = NULL;
 
 // check configuration for missing entries
 if (!$SMTP['timeout']) $SMTP['timeout'] = 15;
@@ -25,7 +25,13 @@ if (!$SMTP['password']) missingConfig('password');
 // process POST request if made
 if (isset($_POST) && !empty($_POST)){
     // retain settings
-    if (!empty($_POST['port'])){
+    if (!empty($_POST['portArbitrary'])){
+        if (filter_var($_POST['portArbitrary'], FILTER_VALIDATE_INT)){
+            $usePort = $useArbPort = $_POST['portArbitrary'];
+        } else{
+            $output .= '<< invalid port specified >><br>';
+        }
+    } elseif (!empty($_POST['port'])){
         $usePort = $_POST['port'];
     } else{
         $output .= '<< no port selected >><br>';
@@ -36,12 +42,20 @@ if (isset($_POST) && !empty($_POST)){
         $output .= '<< no encryption selected >><br>';
     }
     if (!empty($_POST['recipient'])){
-        $recipient = filter_var($_POST['recipient'], FILTER_VALIDATE_EMAIL) ? $_POST['recipient'] : $output .= '<< no recipient address specified >><br>';
+        if (filter_var($_POST['recipient'], FILTER_VALIDATE_EMAIL)){
+            $recipient = $_POST['recipient'];
+        } else{
+            $output .= '<< no recipient address specified >><br>';
+        }
     } else{
         $output .= '<< no recipient address specified >><br>';
     }
     if (!empty($_POST['replyTo'])){
-        $replyTo = filter_var($_POST['replyTo'], FILTER_VALIDATE_EMAIL) ? $_POST['replyTo'] : $output .= '<< no reply address specified >><br>';
+        if (filter_var($_POST['replyTo'], FILTER_VALIDATE_EMAIL)){
+            $replyTo = $_POST['replyTo'];
+        } else{
+            $output .= '<< no reply address specified >><br>';
+        }
     } else{
         $output .= '<< no reply address specified >><br>';
     }
@@ -87,7 +101,11 @@ if (isset($_POST) && !empty($_POST)){
                 </label>
                 <label for="port2525" class="radioLabel">
                     <input type="radio" name="port" id="port2525" class="btn_radio" value=2525 <?php echo (isset($usePort) && $usePort === '2525') ? 'checked' : NULL;?>>
-                    Alternate SMTP 2525
+                    Alternate SMTP (port 2525)
+                </label>
+                <label for="portArbitrary" class="radioLabel">
+                    &emsp;&nbsp;Arbitrary:
+                    <input type="text" name="portArbitrary" id="portArbitrary" class="textbox" value="<?php echo (isset($useArbPort)) ? $useArbPort : ''; ?>">
                 </label>
             </div>
             <div class="encryptionSelect">
