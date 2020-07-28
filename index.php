@@ -61,6 +61,7 @@ if (isset($_POST) && !empty($_POST)){
     }
     // send email IFF no NULL fields
     if ($usePort && $useEncryption && $recipient && $replyTo){
+        $output .= '<< using port: ' . $usePort . ' with encryption: ' . $useEncryption . ' >><br>';
         $body = 'This is a test message from the Simple PHPMailer Test Script. You may ignore this message.';
         $subject = 'PHPMailer Test-Script Message';
         $mailResult = sendEmail($SMTP['timeout'], $SMTP['hostname'], $usePort, $useEncryption, $SMTP['username'], $SMTP['password'], $recipient, $replyTo, $body, $subject);
