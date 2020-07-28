@@ -61,8 +61,8 @@ if (isset($_POST) && !empty($_POST)){
     }
     // send email IFF no NULL fields
     if ($usePort && $useEncryption && $recipient && $replyTo){
-        $body = 'This is a test message from the AB-GROUP PHP Email Port Tester PHP script. You may ignore this message.';
-        $subject = 'Test message from AB-GROUP Port Test Script';
+        $body = 'This is a test message from the Simple PHPMailer Test Script. You may ignore this message.';
+        $subject = 'PHPMailer Test-Script Message';
         $mailResult = sendEmail($SMTP['timeout'], $SMTP['hostname'], $usePort, $useEncryption, $SMTP['username'], $SMTP['password'], $recipient, $replyTo, $body, $subject);
         $output .= $mailResult['debug'];
     }
