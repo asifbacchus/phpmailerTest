@@ -34,7 +34,7 @@ The *only* file you need to alter is **config.php**. Simply provide the informat
 
 ## on-page options
 
-- Ports: Select one of the commonly defined ports or specify an arbitrary port.
+- Ports: Select one of the commonly defined ports or specify an arbitrary port. **Note: Arbitrary port will override all other choices.**
 - Encryption: Select either no encryption, SSL or STARTTLS. Note that you can select a type of encryption that defies the standard setup as determined by your port choice. For example, you can select STARTTLS despite selecting port 465 which is 99% of the time SSL. This will likely generate an error that will appear in the displayed diagnostic log -- that is the point of this test-page :-)
 - Recipient: Address to which you want the test email sent.
 - Reply To: Address which will be used as the reply address of the test message.
