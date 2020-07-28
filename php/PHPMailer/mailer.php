@@ -29,13 +29,16 @@ function sendEmail($timeout, $hostname, $usePort, $useEncryption, $username, $pa
         $mail->SMTPAuth = true;
         $mail->Username = $username;
         $mail->Password = $password;
+        $mail->Port = $usePort;
         // encryption setting
         if ($useEncryption === 'ssl'){
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
         } elseif ($useEncryption === 'starttls'){
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        } elseif ($useEncryption === 'none'){
+            $mail->SMTPSecure = false;
+            $mail->SMTPAutoTLS = false;
         }
-        $mail->Port = $usePort;
 
         // recipients
         $mail->setFrom($replyTo);
