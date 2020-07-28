@@ -17,7 +17,7 @@ This can be a welcome alternative when PHPMailer has been integrated into a comp
 
 1. Clone or extract this repo to the root of your website.
 2. Fill-in your SMTP connection parameters in **config.php** and save the file.
-3. Navigate to *your.domain.tld/mailertest*.
+3. Navigate to *your.domain.tld/phpmailerTest*.
 4. Fill-in the on-page options and click the 'TEST' button.
 5. Read the full diagnostic log provided on screen.
 
