@@ -78,7 +78,7 @@ if (isset($_POST) && !empty($_POST)){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Email Port Test</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" integrity="sha384-9XO3MZfsbW7fC5tHf9nrGgI9BNaS4AEP0OoG6qQAY4PtIfCXaDAGObt6qBEHpyTa" crossorigin="anonymous">
 </head>
 <body>
     <h1>Email Port Test</h1>
