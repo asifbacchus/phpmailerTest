@@ -1,0 +1,35 @@
+LICENSE - TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+
+0. SPECIAL NOTICE
+This repo contains a copy of PHPMailer as obtained from
+https://github.com/PHPMailer/PHPMailer. If you use any portion of code contained
+within this repo that uses or references PHPMailer, you MUST abide by the
+PHPMailer license as found in the above mentioned GitHub repo. The remainder of
+this license in NO WAY applies to the PHPMailer code either in part or its
+entirety.
+
+All OTHER portions of code ('the Code') contained in this repo have been written
+and developed by Asif Bacchus ('the Author'). You are hereby granted free and
+unrestricted permission to use, redistribute and alter the Code in whatever
+way(s) you desire or otherwise see fit under the following conditions:
+
+1. AUTHOR DISCLAIMS ALL LIABILITY. PERIOD.
+You understand the Author makes absolutely NO suggestion or implication
+regarding the Code's suitability for any purpose. Furthermore, absolutely NO
+guarantee or warranty of any nature is made regarding the safety, efficacy,
+efficiency or purpose of the Code. The Author fully disclaims any liability
+arising from your use of the Code.
+
+2. CREDIT
+Although not required, if you use any portion of the Code, please credit the
+Author somewhere in your project or its associated documentation.
+
+3. REDISTRIBUTION OF LICENSE
+If you use any portion of the Code, you MUST include an unmodified copy of this
+license somewhere in your project or its documentation. This clause applies
+regardless of providing credit as per Clause (2).
+
+4. ENTIRETY OF LICENSE
+This file is the entirety of the licence. It is exactly 5 clauses including the
+special notice about PHPMailer and contains exactly two-hundred sixty-three
+words.
